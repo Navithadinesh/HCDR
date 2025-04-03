@@ -41,15 +41,19 @@ image_cnt = 1
 PREDICT = True
 
 while True:
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+
         if event.type == MOUSEMOTION and iswritting:
             xcord, ycord = event.pos
             pygame.draw.circle(DISPLAYSURF , WHITE, (xcord, ycord), 4, 0)
+          
             number_xcord.append(xcord)
             number_ycord.append(ycord)
+
         if event.type == MOUSEBUTTONDOWN:
             iswritting = True
 
